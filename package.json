@@ -9,6 +9,10 @@
   "author": "Krylov Alexey",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "react": ""
+  },
+  "devDependencies": {
+    "grunt-contrib-concat": "^0.5.1"
   }
 }
