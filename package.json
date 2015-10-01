@@ -9,6 +9,7 @@
   "author": "Krylov Alexey",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.14.1",
     "express": "^4.13.3",
     "react": ""
   },
