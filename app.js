@@ -1,7 +1,10 @@
 var express = require('express');
 var app = express();
 
+var comments = require('./routes/comments');
+
 app.use(express.static('public'));
+app.use('/comments', comments);
 
 var server = app.listen(3000, function () {
   var host = server.address().address;

@@ -1,3 +1,5 @@
 # React.js sandbox
 
-`cd public; jsx --watch -x jsx src/ build/`
+`sudo npm install --global babel`
+
+`cd public; babel src --watch --out-dir build`
