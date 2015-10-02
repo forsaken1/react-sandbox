@@ -6,7 +6,7 @@ router.get('/', function(req, res) {
 });
 
 router.post('/', function(req, res) {
-  var comment = req.body.comment;
+  var comment = req.body;
   GLOBAL.db.comments.push(comment);
   res.json({ result: 'ok', comment: comment });
 });
