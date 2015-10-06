@@ -5,7 +5,7 @@ var products = require('./routes/products');
 
 GLOBAL.db = { 
   comments: [ { author: 'Петя', text: 'Комментарий 1' }, { author: 'Саша', text: 'Комментарий 2' } ],
-  products: [ { title: 'Продукт 1', count: 5 } ],
+  products: [ { title: 'Продукт 1', count: 5, price: 345 } ],
 };
 
 var bodyParser = require('body-parser');
