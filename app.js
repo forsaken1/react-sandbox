@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var comments = require('./routes/comments');
 var products = require('./routes/products');
+var single_page = require('./routes/single_page');
 
 GLOBAL.db = { 
   comments: [ { author: 'Петя', text: 'Комментарий 1' }, { author: 'Саша', text: 'Комментарий 2' } ],
@@ -12,6 +13,8 @@ GLOBAL.db = {
   ],
 };
 
+app.set('view engine', 'jade');
+
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -19,6 +22,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use('/comments', comments);
 app.use('/products', products);
+app.use('/', single_page);
 
 var server = app.listen(3003, function () {
   var host = server.address().address;
