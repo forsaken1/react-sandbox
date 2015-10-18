@@ -1,4 +1,7 @@
-//import { Router, Route, Link } from 'react-router'
+var RouteHandler = ReactRouter.RouteHandler;
+var Route = ReactRouter.Route;
+var Link = ReactRouter.Link;
+var Router = ReactRouter.RouteHandler;
 
 var App = React.createClass({
   render: function() {
@@ -11,9 +14,9 @@ var App = React.createClass({
   }
 });
 
-React.render((
+React.render(
   <Router>
-    <Route path="/" component={App}>
-    </Route>
-  </Router>
-), document.body);
+    <Route path="/" component={App} />
+  </Router>,
+  document.getElementById('content')
+);

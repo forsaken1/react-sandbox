@@ -1,10 +1,11 @@
+doctype html
 html
   head
     title Single Page
-    script(src="/build/react.js")
+    script(src="/build/react-full.js")
     script(src="/build/react-router.js")
-    script(src="/build/require.js")
     script(src="/build/jquery.js")
-    script(src="/build/single_page.js")
 
   body
+    #content
+    script(src="/build/single_page.js")
