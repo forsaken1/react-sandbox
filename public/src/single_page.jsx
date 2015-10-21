@@ -6,14 +6,14 @@ var IndexRoute = ReactRouter.IndexRoute;
 const App = React.createClass({
   render() {
     return (
-      <div>
-        <h1>Todo App</h1>
+      <nav class="navbar navbar-dark bg-primary">
+        <Link to="/">Todo App</Link>
         <ul>
           <li><Link to="/todos">Todos</Link></li>
           <li><Link to="/about">About</Link></li>
         </ul>
         {this.props.children}
-      </div>
+      </nav>
     )
   }
 })
