@@ -1,15 +1,16 @@
 var Route = ReactRouter.Route;
 var Router = ReactRouter.Router;
 var Link = ReactRouter.Link;
+var IndexRoute = ReactRouter.IndexRoute;
 
 const App = React.createClass({
   render() {
     return (
       <div>
-        <h1>App</h1>
+        <h1>Todo App</h1>
         <ul>
+          <li><Link to="/todos">Todos</Link></li>
           <li><Link to="/about">About</Link></li>
-          <li><Link to="/inbox">Inbox</Link></li>
         </ul>
         {this.props.children}
       </div>
@@ -23,29 +24,65 @@ const About = React.createClass({
   }
 })
 
-const Inbox = React.createClass({
+const Home = React.createClass({
   render() {
     return (
       <div>
-        <h2>Inbox</h2>
-        {this.props.children || "Welcome to your Inbox"}
+        <h2>Home</h2>
+        {this.props.children}
       </div>
     )
   }
 })
 
-const Message = React.createClass({
+const Todos = React.createClass({
   render() {
     return <h3>Message {this.props.params.id}</h3>
+  }
+})
+
+const Todo = React.createClass({
+  render() {
+    return
+  }
+})
+
+const TodoList = React.createClass({
+  render() {
+    return
+  }
+})
+
+const TodoNew = React.createClass({
+  render() {
+    return
+  }
+})
+
+const TodoShow = React.createClass({
+  render() {
+    return
+  }
+})
+
+const TodoEdit = React.createClass({
+  render() {
+    return
   }
 })
 
 React.render((
   <Router>
     <Route path="/" component={App}>
+      <IndexRoute component={Home} />
       <Route path="about" component={About} />
-      <Route path="inbox" component={Inbox}>
-        <Route path="messages/:id" component={Message} />
+      <Route path="todos" component={Todos}>
+        <IndexRoute component={TodoList} />
+        <Route path="new" component={TodoNew} />
+        <Route path=":id" component={Todo} >
+          <IndexRoute component={TodoShow} />
+          <Route path='edit' component={TodoEdit} />
+        </Route>
       </Route>
     </Route>
   </Router>
