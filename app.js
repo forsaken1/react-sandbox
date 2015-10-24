@@ -11,6 +11,10 @@ GLOBAL.db = {
     { title: 'Продукт 2', count: 0, price: 123 },
     { title: 'Продукт 3', count: 1, price: 654 },
   ],
+  todos: [
+    { message: 'To do 1', checked: false },
+    { message: 'To do 2', checked: true }
+  ]
 };
 
 app.set('view engine', 'jade');

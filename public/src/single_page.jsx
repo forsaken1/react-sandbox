@@ -1,20 +1,24 @@
-var Route = ReactRouter.Route;
-var Router = ReactRouter.Router;
-var Link = ReactRouter.Link;
-var IndexRoute = ReactRouter.IndexRoute;
-var createBrowserHistory = History.createHistory;
+const Route = ReactRouter.Route;
+const Router = ReactRouter.Router;
+const Link = ReactRouter.Link;
+const IndexRoute = ReactRouter.IndexRoute;
+const createBrowserHistory = History.createHistory;
 
 const App = React.createClass({
   render() {
     return (
-      <nav class="navbar navbar-dark bg-primary">
-        <Link to="/">Todo App</Link>
-        <ul>
-          <li><Link to="/todos">Todos</Link></li>
-          <li><Link to="/about">About</Link></li>
-        </ul>
+      <div className="container">
+        <nav className="navbar navbar-dark bg-primary">
+          <div className="collapse navbar-toggleable-xs">
+            <Link className="navbar-brand" to="/">Todo App</Link>
+            <ul className="nav navbar-nav">
+              <li className="nav-item"><Link className="nav-link" to="/todos">Todos</Link></li>
+              <li className="nav-item"><Link className="nav-link" to="/about">About</Link></li>
+            </ul>
+          </div>
+        </nav>
         {this.props.children}
-      </nav>
+      </div>
     )
   }
 })
@@ -38,7 +42,7 @@ const Home = React.createClass({
 
 const Todos = React.createClass({
   render() {
-    return <h3>Message {this.props.params.id}</h3>
+    return <h3>Todos {this.props.params.id}</h3>
   }
 })
 
@@ -50,7 +54,9 @@ const Todo = React.createClass({
 
 const TodoList = React.createClass({
   render() {
-    return
+    return (
+      <Link to="/todos/new" className=""><Link/>
+    )
   }
 })
 
