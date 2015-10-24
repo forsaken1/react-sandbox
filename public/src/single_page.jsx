@@ -2,6 +2,7 @@ var Route = ReactRouter.Route;
 var Router = ReactRouter.Router;
 var Link = ReactRouter.Link;
 var IndexRoute = ReactRouter.IndexRoute;
+var createBrowserHistory = History.createHistory;
 
 const App = React.createClass({
   render() {
@@ -72,7 +73,7 @@ const TodoEdit = React.createClass({
 })
 
 React.render((
-  <Router>
+  <Router history={createBrowserHistory()}>
     <Route path="/" component={App}>
       <IndexRoute component={Home} />
       <Route path="about" component={About} />
