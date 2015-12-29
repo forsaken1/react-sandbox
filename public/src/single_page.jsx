@@ -72,7 +72,7 @@ const todoApp = Redux.combineReducers({
   todos
 });
 
-// Conponents
+// Components
 
 class App extends React.Component {
   render() {
@@ -242,13 +242,11 @@ TodoList.propTypes = {
 // Entry point
 
 let store = Redux.createStore(todoApp);
-
 let rootElement = document.getElementById('content');
+
 React.render(
-  // Дочерний компонент должен быть обернуть в функцию
-  // это баг в React 0.13.
   <Provider store={store}>
-    {() => <App />}
+    <App />
   </Provider>,
   rootElement
 );
